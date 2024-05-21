@@ -11,7 +11,6 @@ func inputBuku(buku *tabBuku, i *int) {
 	for again != "n" && *i < NMAX {
 		fmt.Print("Jika buku lebih dari 1 kata gunakan _ sebagai pengganti spasi\n")
 		fmt.Print("Masukkan judul buku: ")
-		fmt.Scan(&buku[*i].judul)
 		for strings.Contains(buku[*i].judul, " ") {
 			fmt.Println("Judul buku tidak boleh mengandung spasi")
 			fmt.Print("Masukkan judul buku: ")
