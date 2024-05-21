@@ -5,6 +5,7 @@ import (
 )
 
 func tambahkanEksemplar(buku *tabBuku, i int) {
+	cetakBuku(*buku, i)
 	fmt.Println("Masukkan judul buku yang ingin ditambahkan eksemplarnya: ")
 	var keyword string
 	fmt.Scan(&keyword)
