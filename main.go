@@ -54,8 +54,8 @@ func menu() {
 		fmt.Println("3. Exit")
 		fmt.Print("Pilih menu : ")
 		fmt.Scan(&choice)
-		fmt.Print("\033[2J")
-		fmt.Print("\033[H")
+		// fmt.Print("\033[2J")
+		// fmt.Print("\033[H")
 		clearscreen()
 		switch choice {
 		case 1:
