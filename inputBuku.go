@@ -6,6 +6,7 @@ import (
 
 func inputBuku(buku *tabBuku, i *int) {
 	var again string
+	//var found bool
 	fmt.Println("Masukkan data buku:")
 	for again != "n" && *i < NMAX {
 		fmt.Print("Jika buku lebih dari 1 kata gunakan _ sebagai pengganti spasi\n")
@@ -21,15 +22,14 @@ func inputBuku(buku *tabBuku, i *int) {
 		fmt.Print("Masukkan tahun terbit: ")
 		fmt.Scan(&buku[*i].tahunTerbit)
 
-		if &buku[*i].judul == &buku[*i].judul {
-			
-		}
 		for j := 0; j < *i; j++ {
-			if buku[j].judul == buku[*i].judul {
+			if buku[j].judul == buku[*i].judul && buku[j].pengarang == buku[*i].pengarang && buku[j].nomorISBN == buku[*i].nomorISBN {
 				buku[*i].jumlahEksemplar += buku[j].jumlahEksemplar
+				//found = true
 			}
 		}
 
+		
 		*i++
 		fmt.Println("Masukkan data buku lagi? (y/n) ")
 		fmt.Scan(&again)
