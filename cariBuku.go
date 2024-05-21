@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"strings"
 )
 
 func cariBuku(buku tabBuku, i int) {
@@ -25,19 +26,13 @@ func cariBuku(buku tabBuku, i int) {
 		fmt.Scan(&keyword)
 		for j := 0; j < i; j++ {
 			if buku[j].judul == keyword {
-				fmt.Println("Buku ditemukan!")
-				fmt.Println("Judul buku: ", buku[j].judul)
-				fmt.Println("Pengarang: ", buku[j].pengarang)
-				fmt.Println("Nomor ISBN: ", buku[j].nomorISBN)
-				fmt.Println("Jumlah eksemplar: ", buku[j].jumlahEksemplar)
-				fmt.Println("Tahun terbit: ", buku[j].tahunTerbit)
-				fmt.Println(" ")
+				printBuku(buku, j)
 				found = true
 			}
-			if !found {
-				fmt.Println("Buku tidak ditemukan")
-				fmt.Println(" ")
-			}
+		}
+		if !found {
+			fmt.Println("Buku tidak ditemukan")
+			fmt.Println(" ")
 		}
 	case 2:
 		fmt.Print("Jika nama pengarang lebih dari 1 kata gunakan _ sebagai pengganti spasi\n")
@@ -45,51 +40,33 @@ func cariBuku(buku tabBuku, i int) {
 		fmt.Scan(&keyword)
 		for j := 0; j < i; j++ {
 			if buku[j].pengarang == keyword {
-				fmt.Println("Buku ditemukan!")
-				fmt.Println("Judul buku: ", buku[j].judul)
-				fmt.Println("Pengarang: ", buku[j].pengarang)
-				fmt.Println("Nomor ISBN: ", buku[j].nomorISBN)
-				fmt.Println("Jumlah eksemplar: ", buku[j].jumlahEksemplar)
-				fmt.Println("Tahun terbit: ", buku[j].tahunTerbit)
-				fmt.Println(" ")
+				printBuku(buku, j)
 				found = true
 			}
-			if !found {
-				fmt.Println("Buku tidak ditemukan")
-				fmt.Println(" ")
-			}
+		}
+		if !found {
+			fmt.Println("Buku tidak ditemukan")
+			fmt.Println(" ")
 		}
 	case 3:
 		fmt.Print("Masukkan nomor ISBN buku yang ingin dicari: ")
 		fmt.Scan(&keywordint)
 		for j := 0; j < i; j++ {
-			if buku[j].nomorISBN == keywordint {
-				fmt.Println("Buku ditemukan!")
-				fmt.Println("Judul buku: ", buku[j].judul)
-				fmt.Println("Pengarang: ", buku[j].pengarang)
-				fmt.Println("Nomor ISBN: ", buku[j].nomorISBN)
-				fmt.Println("Jumlah eksemplar: ", buku[j].jumlahEksemplar)
-				fmt.Println("Tahun terbit: ", buku[j].tahunTerbit)
-				fmt.Println(" ")
+			if buku[j].nomorISBN == keyword {
+				printBuku(buku, j)
 				found = true
 			}
-			if !found {
-				fmt.Println("Buku tidak ditemukan")
-				fmt.Println(" ")
-			}
+		}
+		if !found {
+			fmt.Println("Buku tidak ditemukan")
+			fmt.Println(" ")
 		}
 	case 4:
 		fmt.Print("Masukkan tahun terbit buku yang ingin dicari: ")
 		fmt.Scan(&keywordint)
 		for j := 0; j < i; j++ {
 			if buku[j].tahunTerbit == keywordint {
-				fmt.Println("Buku ditemukan!")
-				fmt.Println("Judul buku: ", buku[j].judul)
-				fmt.Println("Pengarang: ", buku[j].pengarang)
-				fmt.Println("Nomor ISBN: ", buku[j].nomorISBN)
-				fmt.Println("Jumlah eksemplar: ", buku[j].jumlahEksemplar)
-				fmt.Println("Tahun terbit: ", buku[j].tahunTerbit)
-				fmt.Println(" ")
+				printBuku(buku, j)
 				found = true
 			}
 		}
@@ -101,7 +78,62 @@ func cariBuku(buku tabBuku, i int) {
 		return
 	default:
 		fmt.Println("Menu tidak tersedia, silahkan pilih menu yang tersedia")
+	}
+}
 
+func printBuku(buku tabBuku, j int) {
+	maxNoUrut := len("No Urut")
+	maxNamaBuku := len("Judul Buku")
+	maxNamaPengarang := len("Pengarang")
+	maxNomorISBN := len("Nomor ISBN")
+	maxJumlahEksemplar := len("Jumlah Eksemplar")
+	maxTahunTerbit := len("Tahun Terbit")
+
+	widthNoUrut := len(fmt.Sprintf("%d", j+1))
+	widthNamaBuku := len(strings.ReplaceAll(buku[j].judul, "_", " "))
+	widthNamaPengarang := len(strings.ReplaceAll(buku[j].pengarang, "_", " "))
+	widthNomorISBN := len(fmt.Sprintf(buku[j].nomorISBN))
+	widthJumlahEksemplar := len(fmt.Sprintf("%d", buku[j].jumlahEksemplar))
+	widthTahunTerbit := len(fmt.Sprintf("%d", buku[j].tahunTerbit))
+
+	if widthNoUrut > maxNoUrut {
+		maxNoUrut = widthNoUrut
+	}
+	if widthNamaBuku > maxNamaBuku {
+		maxNamaBuku = widthNamaBuku
+	}
+	if widthNamaPengarang > maxNamaPengarang {
+		maxNamaPengarang = widthNamaPengarang
+	}
+	if widthNomorISBN > maxNomorISBN {
+		maxNomorISBN = widthNomorISBN
+	}
+	if widthJumlahEksemplar > maxJumlahEksemplar {
+		maxJumlahEksemplar = widthJumlahEksemplar
+	}
+	if widthTahunTerbit > maxTahunTerbit {
+		maxTahunTerbit = widthTahunTerbit
 	}
 
+	// Cetak header
+	fmt.Println(strings.Repeat("━", maxNoUrut+maxNamaBuku+maxNamaPengarang+maxNomorISBN+maxJumlahEksemplar+maxTahunTerbit+19))
+	fmt.Printf("| %-*s | %-*s | %-*s | %-*s | %-*s | %-*s |\n",
+		maxNoUrut, "No Urut",
+		maxNamaBuku, "Judul Buku",
+		maxNamaPengarang, "Pengarang",
+		maxNomorISBN, "Nomor ISBN",
+		maxJumlahEksemplar, "Jumlah Eksemplar",
+		maxTahunTerbit, "Tahun Terbit")
+	fmt.Println(strings.Repeat("━", maxNoUrut+maxNamaBuku+maxNamaPengarang+maxNomorISBN+maxJumlahEksemplar+maxTahunTerbit+19))
+
+	// Cetak data buku
+	fmt.Printf("| %-*d | %-*s | %-*s | %-*s | %-*d | %-*d |\n",
+		maxNoUrut, j+1,
+		maxNamaBuku, strings.ReplaceAll(buku[j].judul, "_", " "),
+		maxNamaPengarang, strings.ReplaceAll(buku[j].pengarang, "_", " "),
+		maxNomorISBN, buku[j].nomorISBN,
+		maxJumlahEksemplar, buku[j].jumlahEksemplar,
+		maxTahunTerbit, buku[j].tahunTerbit)
+	fmt.Println(strings.Repeat("─", maxNoUrut+maxNamaBuku+maxNamaPengarang+maxNomorISBN+maxJumlahEksemplar+maxTahunTerbit+19))
+	fmt.Println(" ")
 }

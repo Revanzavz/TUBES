@@ -19,7 +19,7 @@ func cetakBuku(buku tabBuku, i int) {
 		widthNoUrut := len(fmt.Sprintf("%d", j+1))
 		widthNamaBuku := len(strings.ReplaceAll(buku[j].judul, "_", " "))
 		widthNamaPengarang := len(strings.ReplaceAll(buku[j].pengarang, "_", " "))
-		widthNomorISBN := len(fmt.Sprintf("%d", buku[j].nomorISBN))
+		widthNomorISBN := len(fmt.Sprintf(buku[j].nomorISBN))
 		widthJumlahEksemplar := len(fmt.Sprintf("%d", buku[j].jumlahEksemplar))
 		widthTahunTerbit := len(fmt.Sprintf("%d", buku[j].tahunTerbit))
 
@@ -56,7 +56,7 @@ func cetakBuku(buku tabBuku, i int) {
 
 	// Cetak data buku
 	for j := 0; j < i; j++ {
-		fmt.Printf("| %-*d | %-*s | %-*s | %-*d | %-*d | %-*d |\n",
+		fmt.Printf("| %-*d | %-*s | %-*s | %-*s | %-*d | %-*d |\n",
 			maxNoUrut, j+1,
 			maxNamaBuku, strings.ReplaceAll(buku[j].judul, "_", " "),
 			maxNamaPengarang, strings.ReplaceAll(buku[j].pengarang, "_", " "),

@@ -27,7 +27,7 @@ func editBuku(buku *tabBuku, i int, index int) {
 		}
 		fmt.Print("Masukkan nomor ISBN (ketik -1 jika tidak ingin diubah): ")
 		fmt.Scan(&(*buku)[index].nomorISBN)
-		if (*buku)[index].nomorISBN == -1 {
+		if (*buku)[index].nomorISBN == "-" {
 			(*buku)[index].nomorISBN = buku[index].nomorISBN
 		fmt.Print("Masukkan jumlah eksemplar (ketik -1 jika tidak ingin diubah): ")
 		fmt.Scan(&(*buku)[index].jumlahEksemplar)
