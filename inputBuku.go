@@ -21,6 +21,9 @@ func inputBuku(buku *tabBuku, i *int) {
 		fmt.Print("Masukkan tahun terbit: ")
 		fmt.Scan(&buku[*i].tahunTerbit)
 
+		if &buku[*i].judul == &buku[*i].judul {
+			
+		}
 		for j := 0; j < *i; j++ {
 			if buku[j].judul == buku[*i].judul {
 				buku[*i].jumlahEksemplar += buku[j].jumlahEksemplar
