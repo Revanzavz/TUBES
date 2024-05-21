@@ -58,12 +58,12 @@ func cetakBuku(buku tabBuku, i int) {
 	for j := 0; j < i; j++ {
 		fmt.Printf("| %-*d | %-*s | %-*s | %-*d | %-*d | %-*d |\n",
 			maxNoUrut, j+1,
-			maxNamaBuku, buku[j].judul,
-			maxNamaPengarang, buku[j].pengarang,
+			maxNamaBuku, strings.ReplaceAll(buku[j].judul, "_", " "),
+			maxNamaPengarang, strings.ReplaceAll(buku[j].pengarang, "_", " "),
 			maxNomorISBN, buku[j].nomorISBN,
 			maxJumlahEksemplar, buku[j].jumlahEksemplar,
 			maxTahunTerbit, buku[j].tahunTerbit)
-			fmt.Println(strings.Repeat("─", maxNoUrut+maxNamaBuku+maxNamaPengarang+maxNomorISBN+maxJumlahEksemplar+maxTahunTerbit+19))
+		fmt.Println(strings.Repeat("─", maxNoUrut+maxNamaBuku+maxNamaPengarang+maxNomorISBN+maxJumlahEksemplar+maxTahunTerbit+19))
 	}
 	fmt.Println(" ")
 }
