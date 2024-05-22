@@ -22,7 +22,7 @@ func inputBuku(buku *tabBuku, i *int) {
 		fmt.Scan(&buku[*i].tahunTerbit)
 
 		for j := 0; j < *i; j++ {
-			if buku[j].judul == buku[*i].judul {
+			if buku[j].judul == buku[*i].judul && buku[j].nomorISBN == buku[*i].nomorISBN && buku[j].pengarang == buku[*i].pengarang{
 				buku[*i].jumlahEksemplar += buku[j].jumlahEksemplar
 			}
 		}
