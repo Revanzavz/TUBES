@@ -10,6 +10,7 @@ func pinjamBuku(buku *tabBuku, i *int, riwayat *tabPeminjaman, jmlP *int) {
 	var hari, bulan, tahun int
 	var found bool
 
+	cetakBuku(*buku, *i)
 	fmt.Print("Masukkan judul buku yang ingin dipinjam: ")
 	fmt.Scan(&keyword)
 
@@ -64,4 +65,5 @@ func pinjamBuku(buku *tabBuku, i *int, riwayat *tabPeminjaman, jmlP *int) {
 		fmt.Println(" ")
 	}
 	fmt.Print("Mohon diingat pengembalian buku tidak lebih dari 7 hari dari tanggal peminjaman\nJika lebih dari 7 hari akan dikenakan denda sebesar Rp 1000/hari\n")
+	fmt.Println(" ")
 }

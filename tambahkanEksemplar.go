@@ -5,8 +5,10 @@ import (
 )
 
 func tambahkanEksemplar(buku *tabBuku, i int) {
+	cetakBuku(*buku, i)
 	fmt.Println("Masukkan judul buku yang ingin ditambahkan eksemplarnya: ")
 	var keyword string
+	var found bool
 	fmt.Scan(&keyword)
 	for j := 0; j < i; j++ {
 		if buku[j].judul == keyword {
@@ -18,6 +20,7 @@ func tambahkanEksemplar(buku *tabBuku, i int) {
 			fmt.Println("Tahun terbit: ", buku[j].tahunTerbit)
 			fmt.Println(" ")
 
+			found = true
 			var tambah int
 			fmt.Println("Masukkan jumlah eksemplar yang ingin ditambahkan: ")
 			fmt.Scan(&tambah)
@@ -25,9 +28,10 @@ func tambahkanEksemplar(buku *tabBuku, i int) {
 			fmt.Println("Jumlah eksemplar berhasil ditambahkan")
 			fmt.Println("Jumlah eksemplar saat ini: ", buku[j].jumlahEksemplar)
 			fmt.Println(" ")
-		} else {
-			fmt.Println("Buku tidak ditemukan")
-			fmt.Println(" ")
-		}
+		} 
+	}
+	if !found {
+	fmt.Println("Buku tidak ditemukan")
+	fmt.Println(" ")
 	}
 }

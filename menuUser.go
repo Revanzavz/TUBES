@@ -19,6 +19,7 @@ func MenuUser() {
 		case 1:
 			cariBuku(buku, i)
 		case 2:
+			clearscreen()
 			pinjamBuku(&buku, &i, &riwayatPeminjaman, &jumlahPeminjaman)
 		case 3:
 			kembalikanBuku(&buku, i, &riwayatPeminjaman, jumlahPeminjaman)
