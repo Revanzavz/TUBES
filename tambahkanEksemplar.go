@@ -29,6 +29,7 @@ func tambahkanEksemplar(buku *tabBuku, i int) {
 			fmt.Println("Jumlah eksemplar saat ini: ", buku[j].jumlahEksemplar)
 			fmt.Println(" ")
 		} 
+		
 	}
 	if !found {
 	fmt.Println("Buku tidak ditemukan")

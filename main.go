@@ -3,7 +3,6 @@ package main
 import (
 	// "bufio"
 	"fmt"
-
 	"time"
 
 	// "github.com/inancgumus/screen"

@@ -4,6 +4,15 @@ import (
     "fmt"
 )
 
+// Define the structure for tabBuku
+// type Buku struct {
+// 	judul           string
+// 	pengarang       string
+// 	nomorISBN       string
+// 	jumlahEksemplar int
+// 	tahunTerbit     int
+// }
+
 func inputBuku(buku *tabBuku, i *int) {
     var again string
     fmt.Println("Masukkan data buku:")
