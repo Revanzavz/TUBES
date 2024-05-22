@@ -1,6 +1,6 @@
 package main
 
-	import (
+import (
 	"fmt"
 	"strings"
 )
@@ -66,4 +66,6 @@ func cetakBuku(buku tabBuku, i int) {
 		fmt.Println(strings.Repeat("─", maxNoUrut+maxNamaBuku+maxNamaPengarang+maxNomorISBN+maxJumlahEksemplar+maxTahunTerbit+19))
 	}
 	fmt.Println(" ")
+
+	// if buku[i].judul == buk
 }

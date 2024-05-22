@@ -4,33 +4,51 @@ import (
 	"fmt"
 )
 
+// Define the structure for tabBuku
+// type Buku struct {
+// 	judul           string
+// 	pengarang       string
+// 	nomorISBN       string
+// 	jumlahEksemplar int
+// 	tahunTerbit     int
+// }
+
 func inputBuku(buku *tabBuku, i *int) {
 	var again string
-	//var found bool
 	fmt.Println("Masukkan data buku:")
+
 	for again != "n" && *i < NMAX {
 		fmt.Print("Jika buku lebih dari 1 kata gunakan _ sebagai pengganti spasi\n")
 		fmt.Print("Masukkan judul buku: ")
-		fmt.Scan(&buku[*i].judul)
+		var judul string
+		fmt.Scan(&judul)
+
 		fmt.Print("Jika nama pengarang lebih dari 1 kata gunakan _ sebagai pengganti spasi\n")
 		fmt.Print("Masukkan nama pengarang: ")
-		fmt.Scan(&buku[*i].pengarang)
-		fmt.Print("Masukkan nomor ISBN: ")
-		fmt.Scan(&buku[*i].nomorISBN)
-		fmt.Print("Masukkan jumlah eksemplar: ")
-		fmt.Scan(&buku[*i].jumlahEksemplar)
-		fmt.Print("Masukkan tahun terbit: ")
-		fmt.Scan(&buku[*i].tahunTerbit)
+		var pengarang string
+		fmt.Scan(&pengarang)
 
+		fmt.Print("Masukkan nomor ISBN: ")
+		var nomorISBN string
+		fmt.Scan(&nomorISBN)
+
+		fmt.Print("Masukkan jumlah eksemplar: ")
+		var jumlahEksemplar int
+		fmt.Scan(&jumlahEksemplar)
+
+		fmt.Print("Masukkan tahun terbit: ")
+		var tahunTerbit int
+		fmt.Scan(&tahunTerbit)
+
+		//found := false
 		for j := 0; j < *i; j++ {
-			if buku[j].judul == buku[*i].judul && buku[j].pengarang == buku[*i].pengarang && buku[j].nomorISBN == buku[*i].nomorISBN {
-				buku[*i].jumlahEksemplar += buku[j].jumlahEksemplar
-				//found = true
+			if buku[j].judul == judul && buku[j].pengarang == pengarang && buku[j].nomorISBN == nomorISBN {
+				buku[j].jumlahEksemplar += jumlahEksemplar
+			//	found = true
 			}
 		}
 
-		
-		*i++
+
 		fmt.Println("Masukkan data buku lagi? (y/n) ")
 		fmt.Scan(&again)
 
