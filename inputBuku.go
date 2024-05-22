@@ -42,9 +42,9 @@ func inputBuku(buku *tabBuku, i *int) {
 
 		//found := false
 		for j := 0; j < *i; j++ {
-			if buku[j].judul == judul && buku[j].pengarang == pengarang && buku[j].nomorISBN == nomorISBN {
-				buku[j].jumlahEksemplar += jumlahEksemplar
-			//	found = true
+			if buku[j].judul == buku[*i].judul {
+				buku[*i].jumlahEksemplar += buku[j].jumlahEksemplar
+				//found = true
 			}
 		}
 
