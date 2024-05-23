@@ -1,17 +1,14 @@
 package main
 
 import (
-	// "bufio"
 	"fmt"
 	"time"
-
-	// "github.com/inancgumus/screen"
 )
 
 const NMAX = 1000
 
 type dataBuku struct {
-	judul, pengarang, nomorISBN                       string
+	judul, pengarang, nomorISBN  string
 	jumlahEksemplar, tahunTerbit int
 }
 
@@ -29,7 +26,6 @@ type tabPeminjaman [NMAX]dataPeminjaman
 
 var riwayatPeminjaman tabPeminjaman
 var jumlahPeminjaman int
-
 
 func main() {
 	loading()
@@ -53,8 +49,6 @@ func menu() {
 		fmt.Println("3. Exit")
 		fmt.Print("Pilih menu : ")
 		fmt.Scan(&choice)
-		// fmt.Print("\033[2J")
-		// fmt.Print("\033[H")
 		clearscreen()
 		switch choice {
 		case 1:
@@ -91,7 +85,6 @@ func MenuAdmin() {
 		fmt.Println("8. Exit")
 		fmt.Print("Pilih menu : ")
 		fmt.Scan(&choiceAdmin)
-		fmt.Print("\033[2J")
 		clearscreen()
 		switch choiceAdmin {
 		case 1:
@@ -141,21 +134,3 @@ func MenuAdmin() {
 		}
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

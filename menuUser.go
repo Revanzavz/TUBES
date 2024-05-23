@@ -17,13 +17,16 @@ func MenuUser() {
 		fmt.Println()
 		switch choiceUser {
 		case 1:
+			clearscreen()
 			cariBuku(buku, i)
 		case 2:
 			clearscreen()
 			pinjamBuku(&buku, &i, &riwayatPeminjaman, &jumlahPeminjaman)
 		case 3:
+			clearscreen()
 			kembalikanBuku(&buku, i, &riwayatPeminjaman, jumlahPeminjaman)
 		case 4:
+			clearscreen()
 			lihatRiwayat(riwayatPeminjaman, jumlahPeminjaman)
 		case 5:
 			return
