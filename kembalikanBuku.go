@@ -27,11 +27,13 @@ func kembalikanBuku(buku *tabBuku, i int, riwayat *tabPeminjaman, jmlP int) {
 			fmt.Print("Masukkan tanggal pengembalian (dd mm yyyy): ")
 			fmt.Scan(&hari, &bulan, &tahun)
 			for hari > 31 || bulan > 12 {
-				fmt.Println("Tanggal tidak valid")
+				fmt.Println("Tanggal atau Bulan tidak valid!")
+				fmt.Println("Periksa Kembali!")
 				fmt.Print("Masukkan tanggal pengembalian (dd mm yyyy): ")
 				fmt.Scan(&hari, &bulan, &tahun)
 				for hari > 31 || bulan > 12 {
-					fmt.Println("Tanggal tidak valid")
+					fmt.Println("Tanggal atau Bulan tidak valid!")
+					fmt.Println("Periksa Kembali!")
 					fmt.Print("Masukkan tanggal pengembalian (dd mm yyyy): ")
 					fmt.Scan(&hari, &bulan, &tahun)
 				}
@@ -60,6 +62,7 @@ func kembalikanBuku(buku *tabBuku, i int, riwayat *tabPeminjaman, jmlP int) {
 }
 
 func hapusBuku(buku *tabBuku, i *int, index int) {
+	cetakBuku(*buku, *i)
 	var keyword string
 	var found bool
 	fmt.Print("Masukkan judul buku yang ingin dihapus: ")

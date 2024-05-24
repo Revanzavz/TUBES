@@ -7,6 +7,7 @@ import (
 func tambahkanEksemplar(buku *tabBuku, i int) {
 	cetakBuku(*buku, i)
 	fmt.Println("Masukkan judul buku yang ingin ditambahkan eksemplarnya: ")
+	fmt.Println("Catatan! 'Gunakan _ sebagai pengganti spasi' ")
 	var keyword string
 	var found bool
 	fmt.Scan(&keyword)
