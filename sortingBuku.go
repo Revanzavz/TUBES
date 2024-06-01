@@ -17,16 +17,24 @@ func sortingBuku(buku *tabBuku, i int) {
 		clearscreen()
 		switch choiceSort {
 		case 1:
-			for j := 0; j < i; j++ {
-				for k := j + 1; k < i; k++ {
-					if (*buku)[j].judul > (*buku)[k].judul {
-						temp := (*buku)[j]
-						(*buku)[j] = (*buku)[k]
-						(*buku)[k] = temp
+			//selection sort
+			pass := 1
+			for pass < i {
+				idx := pass - 1
+				j := pass
+				for j < i {
+					if (*buku)[idx].judul < (*buku)[j].judul {
+						idx = j
 					}
+					j++
 				}
+				temp := (*buku)[pass-1]
+				(*buku)[pass-1] = (*buku)[idx]
+				(*buku)[idx] = temp
+				pass++
 			}
 		case 2:
+			//insertion sort
 			pass := 1
 			for pass < i {
 				j := pass
