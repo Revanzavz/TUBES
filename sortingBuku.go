@@ -27,20 +27,22 @@ func sortingBuku(buku *tabBuku, i int) {
 				}
 			}
 		case 2:
-			for j := 0; j < i; j++ {
-				for k := j + 1; k < i; k++ {
-					if (*buku)[j].tahunTerbit > (*buku)[k].tahunTerbit {
-						temp := (*buku)[j]
-						(*buku)[j] = (*buku)[k]
-						(*buku)[k] = temp
-					}
+			pass := 1
+			for pass < i {
+				j := pass
+				temp := (*buku)[pass]
+				for j > 0 && temp.tahunTerbit < (*buku)[j-1].tahunTerbit {
+					(*buku)[j] = (*buku)[j-1]
+					j--
 				}
+				(*buku)[j] = temp
+				pass++
 			}
 		case 3:
 			return
 		default:
 			fmt.Println("Menu tidak tersedia, silahkan pilih menu yang tersedia")
 		}
-	
+
 	}
 }
