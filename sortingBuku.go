@@ -23,7 +23,7 @@ func sortingBuku(buku *tabBuku, i int) {
 				idx := pass - 1
 				j := pass
 				for j < i {
-					if (*buku)[idx].judul < (*buku)[j].judul {
+					if (*buku)[idx].judul > (*buku)[j].judul {
 						idx = j
 					}
 					j++
