@@ -55,7 +55,7 @@ func pinjamBuku(buku *tabBuku, i *int, riwayat *tabPeminjaman, jmlP *int) {
 			// Kurangi jumlah eksemplar buku
 			(*buku)[j].jumlahEksemplar--
 			if (*buku)[j].jumlahEksemplar == 0 {
-				fmt.Println("Buku telah habis")
+				fmt.Println("Mohon maaf Buku yang anda ingin pinjam belum tersedia")
 			}
 		}
 	}
