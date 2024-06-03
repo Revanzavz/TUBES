@@ -56,7 +56,6 @@ func menu() {
 			clearscreen()
 		case 2:
 			MenuUser()
-			fmt.Print("\033[2J")
 			clearscreen()
 		case 3:
 			return
