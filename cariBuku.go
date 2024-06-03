@@ -24,6 +24,7 @@ func cariBuku(buku tabBuku, i int) {
 		fmt.Print("Jika judul buku lebih dari 1 kata gunakan _ sebagai pengganti spasi\n")
 		fmt.Print("Masukkan judul buku yang ingin dicari: ")
 		fmt.Scan(&keyword)
+		clearscreen()
 		for j := 0; j < i; j++ {
 			if buku[j].judul == keyword {
 				printBuku(buku, j)
@@ -38,6 +39,7 @@ func cariBuku(buku tabBuku, i int) {
 		fmt.Print("Jika nama pengarang lebih dari 1 kata gunakan _ sebagai pengganti spasi\n")
 		fmt.Print("Masukkan pengarang buku yang ingin dicari: ")
 		fmt.Scan(&keyword)
+		clearscreen()
 		for j := 0; j < i; j++ {
 			if buku[j].pengarang == keyword {
 				printBuku(buku, j)
@@ -51,6 +53,7 @@ func cariBuku(buku tabBuku, i int) {
 	case 3:
 		fmt.Print("Masukkan nomor ISBN buku yang ingin dicari: ")
 		fmt.Scan(&keywordint)
+		clearscreen()
 		for j := 0; j < i; j++ {
 			if buku[j].nomorISBN == keyword {
 				printBuku(buku, j)
@@ -64,6 +67,7 @@ func cariBuku(buku tabBuku, i int) {
 	case 4:
 		fmt.Print("Masukkan tahun terbit buku yang ingin dicari: ")
 		fmt.Scan(&keywordint)
+		clearscreen()
 		for j := 0; j < i; j++ {
 			if buku[j].tahunTerbit == keywordint {
 				printBuku(buku, j)
@@ -77,6 +81,7 @@ func cariBuku(buku tabBuku, i int) {
 	case 5:
 		return
 	default:
+		clearscreen()
 		fmt.Println("Menu tidak tersedia, silahkan pilih menu yang tersedia")
 	}
 }

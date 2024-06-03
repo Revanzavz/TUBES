@@ -10,10 +10,10 @@ func pinjamBuku(buku *tabBuku, i *int, riwayat *tabPeminjaman, jmlP *int) {
 	var hari, bulan, tahun int
 	var found bool
 
-	cetakBuku(*buku, *i)
-	fmt.Print("Masukkan judul buku yang ingin dipinjam: ")
+	fmt.Println("Masukkan judul buku yang ingin dipinjam: ")
+	fmt.Println("Gunakan tanda '_' untuk menggantikan spasi")
 	fmt.Scan(&keyword)
-
+	clearscreen()
 	for j := 0; j < *i; j++ {
 		if (*buku)[j].judul == keyword {
 			found = true
@@ -41,7 +41,7 @@ func pinjamBuku(buku *tabBuku, i *int, riwayat *tabPeminjaman, jmlP *int) {
 				fmt.Print("Masukkan tanggal peminjaman (dd mm yyyy): ")
 				fmt.Scan(&hari, &bulan, &tahun)
 			}
-
+			clearscreen()
 			tanggalPeminjaman := time.Date(tahun, time.Month(bulan), hari, 0, 0, 0, 0, time.UTC)
 
 			// Simpan riwayat peminjaman
@@ -59,11 +59,12 @@ func pinjamBuku(buku *tabBuku, i *int, riwayat *tabPeminjaman, jmlP *int) {
 			}
 		}
 	}
-
+	//clearscreen()
 	if !found {
 		fmt.Println("Buku tidak ditemukan")
 		fmt.Println(" ")
+	} else {
+		fmt.Print("Mohon diingat pengembalian buku tidak lebih dari 7 hari dari tanggal peminjaman\nJika lebih dari 7 hari akan dikenakan denda sebesar Rp 1000/hari\n")
+		fmt.Println(" ")
 	}
-	fmt.Print("Mohon diingat pengembalian buku tidak lebih dari 7 hari dari tanggal peminjaman\nJika lebih dari 7 hari akan dikenakan denda sebesar Rp 1000/hari\n")
-	fmt.Println(" ")
 }

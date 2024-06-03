@@ -21,6 +21,7 @@ func MenuUser() {
 			cariBuku(buku, i)
 		case 2:
 			clearscreen()
+			cetakBuku(buku, i)
 			pinjamBuku(&buku, &i, &riwayatPeminjaman, &jumlahPeminjaman)
 		case 3:
 			clearscreen()

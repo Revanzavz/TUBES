@@ -12,7 +12,7 @@ func kembalikanBuku(buku *tabBuku, i int, riwayat *tabPeminjaman, jmlP int) {
 	fmt.Print("Masukkan judul buku yang ingin dikembalikan: ")
 	fmt.Scan(&keyword)
 	for j := 0; j < i; j++ {
-		if (*buku)[j].judul == keyword {
+		if (*buku)[j].judul == keyword  {
 			found = true
 			buku[j].jumlahEksemplar++
 			fmt.Println("Buku ditemukan!")
@@ -46,10 +46,15 @@ func kembalikanBuku(buku *tabBuku, i int, riwayat *tabPeminjaman, jmlP int) {
 				if (*riwayat)[k].judul == keyword {
 					tanggalPeminjaman := (*riwayat)[k].tanggalPeminjaman
 					durasi := tanggalPengembalian.Sub(tanggalPeminjaman).Hours() / 24
-					fmt.Println("Durasi Peminjaman: ", durasi, "hari")
+					if durasi > 0 && durasi < 7 {
+						fmt.Println("Durasi Peminjaman: ", durasi, "hari")
+					}
 					if durasi >= 7 {
 						fmt.Println("Anda terlambat mengembalikan buku selama", durasi, "hari")
 						fmt.Println("Denda yang harus dibayar sebesar Rp", (durasi-7)*1000)
+					} else {
+						buku[j].jumlahEksemplar--
+						fmt.Print("Pengembalian seharusnya lebih dari masa tanggal peminjaman\nSilahkan input ulang")
 					}
 				}
 			}
