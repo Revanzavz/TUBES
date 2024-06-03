@@ -9,10 +9,9 @@
             "server": "localhost",
             "port": 3306,
             "driver": "MySQL",
-            "name": "FirstMySqlConnection",
-            "username": "revanzavz",
-            "password": "Nar24042005.",
-            "database": "tubes"
+            "name": "vz",
+            "database": "sehatyuk",
+            "username": "root"
         }
     ]
 }

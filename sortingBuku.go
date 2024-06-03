@@ -33,6 +33,7 @@ func sortingBuku(buku *tabBuku, i int) {
 				(*buku)[idx] = temp
 				pass++
 			}
+			cetakBuku(*buku, i)
 		case 2:
 			//insertion sort
 			pass := 1
@@ -46,6 +47,7 @@ func sortingBuku(buku *tabBuku, i int) {
 				(*buku)[j] = temp
 				pass++
 			}
+			cetakBuku(*buku, i)
 		case 3:
 			return
 		default:

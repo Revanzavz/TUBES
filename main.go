@@ -33,7 +33,13 @@ func main() {
 }
 
 func clearscreen() {
+	// "\033[2J" adalah string yang berisi urutan escape ANSI. Urutan ini digunakan untuk membersihkan layar terminal. Penjelasan lebih lanjut:
+	// 1) \033 adalah escape character (ESC) dalam notasi oktal (ASCII code 27).
+	// 2) [2J adalah bagian dari urutan escape yang memberitahu terminal untuk menghapus layar seluruhnya.
 	fmt.Print("\033[2J")
+	// "\033[H" adalah urutan escape ANSI lain yang digunakan untuk memindahkan kursor ke posisi kiri atas layar (baris 1, kolom 1).
+	// 1) \033 adalah escape character (ESC) yang sama seperti sebelumnya.
+	// 2) [H memberitahu terminal untuk memindahkan kursor ke posisi home (kiri atas).
 	fmt.Print("\033[H")
 }
 
@@ -60,7 +66,7 @@ func menu() {
 		case 3:
 			return
 		default:
-			fmt.Println("Menu tidak tersedia, silahkax` menu yang tersedia")
+			fmt.Println("Menu tidak tersedia, silahkan menu yang tersedia")
 		}
 	}
 }

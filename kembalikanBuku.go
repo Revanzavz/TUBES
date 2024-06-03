@@ -47,9 +47,12 @@ func kembalikanBuku(buku *tabBuku, i int, riwayat *tabPeminjaman, jmlP int) {
 					if durasi >= 7 {
 						fmt.Println("Anda terlambat mengembalikan buku selama", durasi, "hari")
 						fmt.Println("Denda yang harus dibayar sebesar Rp", (durasi-7)*1000)
+						fmt.Println("Terimakasih sudah mengembalikan buku")
+						fmt.Println(" ")
 					} else {
 						(*buku)[j].jumlahEksemplar--
-						fmt.Print("Pengembalian seharusnya lebih dari masa tanggal peminjaman\nSilahkan input ulang")
+						fmt.Println("Buku berhasil dikembalikan")
+						fmt.Println("Terimakasih sudah mengembalikan buku tepat waktu")
 					}
 				}
 			}

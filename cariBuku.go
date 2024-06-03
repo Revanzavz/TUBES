@@ -21,6 +21,7 @@ func cariBuku(buku tabBuku, i int) {
 	fmt.Scan(&caridatabuku)
 	switch caridatabuku {
 	case 1:
+			//sequential search
 		fmt.Print("Jika judul buku lebih dari 1 kata gunakan _ sebagai pengganti spasi\n")
 		fmt.Print("Masukkan judul buku yang ingin dicari: ")
 		fmt.Scan(&keyword)
@@ -36,6 +37,7 @@ func cariBuku(buku tabBuku, i int) {
 			fmt.Println(" ")
 		}
 	case 2:
+			//sequential search
 		fmt.Print("Jika nama pengarang lebih dari 1 kata gunakan _ sebagai pengganti spasi\n")
 		fmt.Print("Masukkan pengarang buku yang ingin dicari: ")
 		fmt.Scan(&keyword)
@@ -51,6 +53,7 @@ func cariBuku(buku tabBuku, i int) {
 			fmt.Println(" ")
 		}
 	case 3:
+			//sequential search
 		fmt.Print("Masukkan nomor ISBN buku yang ingin dicari: ")
 		fmt.Scan(&keywordint)
 		clearscreen()
@@ -65,6 +68,7 @@ func cariBuku(buku tabBuku, i int) {
 			fmt.Println(" ")
 		}
 	case 4:
+			//sequential search
 		fmt.Print("Masukkan tahun terbit buku yang ingin dicari: ")
 		fmt.Scan(&keywordint)
 		clearscreen()

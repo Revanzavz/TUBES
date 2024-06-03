@@ -54,6 +54,7 @@ func editBuku(buku *tabBuku, i int, index int) {
 		}
 		fmt.Println("Data buku berhasil diubah")
 		fmt.Println(" ")
+		clearscreen()
 	} else {
 		fmt.Println("Buku tidak ditemukan")
 		fmt.Println(" ")
