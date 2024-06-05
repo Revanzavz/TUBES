@@ -55,7 +55,7 @@ func cariBuku(buku tabBuku, i int) {
 	case 3:
 			//sequential search
 		fmt.Print("Masukkan nomor ISBN buku yang ingin dicari: ")
-		fmt.Scan(&keywordint)
+		fmt.Scan(&keyword)
 		clearscreen()
 		for j := 0; j < i; j++ {
 			if buku[j].nomorISBN == keyword {
