@@ -8,7 +8,7 @@ func lihatRiwayat(riwayat tabPeminjaman, jmlP int) {
 	if jmlP == 0 {
 		fmt.Println("Belum ada riwayat peminjaman.")
 		fmt.Println(" ")
-		return
+		
 	}
 	fmt.Println("Riwayat Peminjaman:")
 	for j := 0; j < jmlP; j++ {
