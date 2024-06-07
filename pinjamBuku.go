@@ -36,7 +36,7 @@ func pinjamBuku(buku *tabBuku, i *int, riwayat *tabPeminjaman, jmlP *int) {
 			fmt.Scan(&namaPeminjam)
 			fmt.Print("Masukkan tanggal peminjaman (dd mm yyyy): ")
 			fmt.Scan(&hari, &bulan, &tahun)
-			for hari > 31 || bulan > 12 {
+			for hari > 31 || bulan > 12 || (bulan == 02 && hari > 28) {
 				fmt.Println("Tanggal tidak valid")
 				fmt.Print("Masukkan tanggal peminjaman (dd mm yyyy): ")
 				fmt.Scan(&hari, &bulan, &tahun)
