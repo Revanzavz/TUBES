@@ -49,11 +49,7 @@ func kembalikanBuku(buku *tabBuku, i int, riwayat *tabPeminjaman, jmlP int) {
 						fmt.Println("Denda yang harus dibayar sebesar Rp", (durasi-7)*1000)
 						fmt.Println("Terimakasih sudah mengembalikan buku")
 						fmt.Println(" ")
-<<<<<<< HEAD
 					}else {
-=======
-					} else {
->>>>>>> 6a8fc5ea5a801f8944b6b40d06e83abe6b601e92
 						(*buku)[j].jumlahEksemplar++
 						fmt.Println("Buku berhasil dikembalikan")
 						fmt.Println("Terimakasih sudah mengembalikan buku tepat waktu")
