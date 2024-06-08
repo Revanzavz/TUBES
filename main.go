@@ -131,7 +131,6 @@ func MenuAdmin() {
 				fmt.Println(" ")
 			} else {
 				sortingBuku(&buku, i)
-				cetakBuku(buku, i)
 			}
 		case 4:
 			if i == 0 {
