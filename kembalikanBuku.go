@@ -50,7 +50,6 @@ func kembalikanBuku(buku *tabBuku, i int, riwayat *tabPeminjaman, jmlP int) {
 						fmt.Println("Terimakasih sudah mengembalikan buku")
 						fmt.Println(" ")
 					}else {
-						(*buku)[j].jumlahEksemplar++
 						fmt.Println("Buku berhasil dikembalikan")
 						fmt.Println("Terimakasih sudah mengembalikan buku tepat waktu")
 					}
