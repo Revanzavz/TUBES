@@ -23,7 +23,7 @@ func kembalikanBuku(buku *tabBuku, i int, riwayat *tabPeminjaman, jmlP int) {
 					fmt.Println("Judul buku: ", (*buku)[j].judul)
 					fmt.Println("Pengarang: ", (*buku)[j].pengarang)
 					fmt.Println("Nomor ISBN: ", (*buku)[j].nomorISBN)
-					fmt.Println("Jumlah eksemplar: ", (*buku)[j].jumlahEksemplar)
+					fmt.Println("Jumlah eksemplar: ", (*buku)[j].jumlahEksemplar - 1)
 					fmt.Println("Tahun terbit: ", (*buku)[j].tahunTerbit)
 					fmt.Println(" ")
 
@@ -50,7 +50,7 @@ func kembalikanBuku(buku *tabBuku, i int, riwayat *tabPeminjaman, jmlP int) {
 						fmt.Println("Terimakasih sudah mengembalikan buku")
 						fmt.Println(" ")
 					} else {
-						(*buku)[j].jumlahEksemplar--
+						(*buku)[j].jumlahEksemplar++
 						fmt.Println("Buku berhasil dikembalikan")
 						fmt.Println("Terimakasih sudah mengembalikan buku tepat waktu")
 					}
