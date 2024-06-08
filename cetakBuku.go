@@ -20,7 +20,7 @@ func cetakBuku(buku tabBuku, i int) {
 		widthNamaBuku := len(strings.ReplaceAll(buku[j].judul, "_", " "))
 		widthNamaPengarang := len(strings.ReplaceAll(buku[j].pengarang, "_", " "))
 		widthNomorISBN := len(fmt.Sprintf(buku[j].nomorISBN))
-		widthJumlahEksemplar := len(fmt.Sprintf("%d", buku[j].jumlahEksemplar))
+		widthJumlahEksemplar := len(fmt.Sprint(buku[j].jumlahEksemplar))
 		widthTahunTerbit := len(fmt.Sprintf("%d", buku[j].tahunTerbit))
 
 		if widthNoUrut > maxNoUrut {
@@ -67,5 +67,4 @@ func cetakBuku(buku tabBuku, i int) {
 	}
 	fmt.Println(" ")
 
-	// if buku[i].judul == buk
 }
