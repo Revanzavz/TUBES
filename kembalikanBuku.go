@@ -18,7 +18,6 @@ func kembalikanBuku(buku *tabBuku, i int, riwayat *tabPeminjaman, jmlP int) {
 			for k := 0; k < jmlP; k++ {
 				if (*riwayat)[k].judul == keyword && (*riwayat)[k].namaPeminjam == namaPeminjam {
 					found = true
-					(*buku)[j].jumlahEksemplar++
 					fmt.Println("Buku ditemukan!")
 					fmt.Println("Judul buku: ", (*buku)[j].judul)
 					fmt.Println("Pengarang: ", (*buku)[j].pengarang)
