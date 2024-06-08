@@ -40,16 +40,16 @@ func editBuku(buku *tabBuku, i int, index int) {
 		if idx.isbn != "-1" {
 			(*buku)[index].nomorISBN = idx.isbn
 		}
-		fmt.Print("Masukkan jumlah eksemplar (ketik -1 jika tidak ingin diubah): ")
+		fmt.Print("Masukkan jumlah eksemplar (ketik (nilai yang bernilai > 0) jika tidak ingin diubah): ")
 		
 		fmt.Scan(&idx.eksemplar)
-		if idx.eksemplar != -1 {
+		if idx.eksemplar > 0 {
 			(*buku)[index].jumlahEksemplar = idx.eksemplar
 		}
-		fmt.Print("Masukkan tahun terbit (ketik -1 jika tidak ingin diubah): ")
+		fmt.Print("Masukkan tahun terbit (ketik (nilai yang bernilai > 0) jika tidak ingin diubah): ")
 		
 		fmt.Scan(&idx.terbit)
-		if idx.terbit != -1 {
+		if idx.terbit > 0 {
 			(*buku)[index].tahunTerbit = idx.terbit
 		}
 		fmt.Println("Data buku berhasil diubah")
