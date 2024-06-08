@@ -6,7 +6,7 @@ import (
 
 func sortingBuku(buku *tabBuku, i int) {
 	var choiceSort int
-	for choiceSort != 3 {
+	for choiceSort != 5 {
 		fmt.Println("Menu Sorting:")
 		fmt.Println("1. Sorting berdasarkan judul secara ascending")
 		fmt.Println("2. sorting berdasarkan judul secara descending")
