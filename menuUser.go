@@ -17,18 +17,42 @@ func MenuUser() {
 		fmt.Println()
 		switch choiceUser {
 		case 1:
+			if i == 0 {
+				fmt.Println("Data buku masih kosong")
+				fmt.Println("Input Data Buku terlebih dahulu dengan memilih menu 1")
+				fmt.Println(" ")
+			} else {
 			clearscreen()
 			cariBuku(buku, i)
+			}
 		case 2:
+			if i == 0 {
+				fmt.Println("Data buku masih kosong")
+				fmt.Println("Input Data Buku terlebih dahulu dengan memilih menu 1")
+				fmt.Println(" ")
+			} else {
 			clearscreen()
 			cetakBuku(buku, i)
 			pinjamBuku(&buku, &i, &riwayatPeminjaman, &jumlahPeminjaman)
+			}
 		case 3:
+			if i == 0 {
+				fmt.Println("Data buku masih kosong")
+				fmt.Println("Input Data Buku terlebih dahulu dengan memilih menu 1")
+				fmt.Println(" ")
+			} else {
 			clearscreen()
 			kembalikanBuku(&buku, i, &riwayatPeminjaman, jumlahPeminjaman)
+			}
 		case 4:
+			if i == 0 {
+				fmt.Println("Data buku masih kosong")
+				fmt.Println("Input Data Buku terlebih dahulu dengan memilih menu 1")
+				fmt.Println(" ")
+			} else {
 			clearscreen()
 			lihatRiwayat(riwayatPeminjaman, jumlahPeminjaman)
+			}
 		case 5:
 			return
 		default:
